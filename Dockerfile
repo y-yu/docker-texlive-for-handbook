@@ -20,6 +20,7 @@ RUN apk --no-cache add perl wget xz tar fontconfig-dev make && \
       collection-fontsrecommended collection-langjapanese latexmk \
       enumitem piff menukeys xstring adjustbox collectbox relsize \
       catoptions cprotect bigfoot && \
+    (tlmgr install xetex || exit 0) && \
     rm -fr /tmp/install-tl-unx && \
     apk --no-cache del xz tar fontconfig-dev
 
