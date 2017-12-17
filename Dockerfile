@@ -2,7 +2,7 @@ FROM frolvlad/alpine-glibc
 
 MAINTAINER yyu <m [at] yyu.pw>
 
-ENV PATH /usr/local/texlive/2016/bin/x86_64-linux:$PATH
+ENV PATH /usr/local/texlive/2017/bin/x86_64-linux:$PATH
 
 RUN apk --no-cache add perl wget xz tar fontconfig-dev make && \
     mkdir /tmp/install-tl-unx && \
@@ -19,7 +19,7 @@ RUN apk --no-cache add perl wget xz tar fontconfig-dev make && \
       collection-basic collection-latex collection-latexrecommended \
       collection-fontsrecommended collection-langjapanese latexmk \
       enumitem piff menukeys xstring adjustbox collectbox relsize \
-      catoptions cprotect bigfoot && \
+      catoptions cprotect bigfoot ifptex type1cm && \
     (tlmgr install xetex || exit 0) && \
     rm -fr /tmp/install-tl-unx && \
     apk --no-cache del xz tar fontconfig-dev
