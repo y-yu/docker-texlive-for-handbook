@@ -4,7 +4,7 @@ MAINTAINER yyu <m [at] yyu.pw>
 
 ENV PATH /usr/local/texlive/2017/bin/x86_64-linux:$PATH
 
-RUN apk --no-cache add perl wget xz tar fontconfig-dev make && \
+RUN apk --no-cache add perl wget xz tar fontconfig-dev make ghostscript && \
     mkdir /tmp/install-tl-unx && \
     wget -qO- http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz | \
     tar -xz -C /tmp/install-tl-unx --strip-components=1 && \
